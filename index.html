@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Página Especial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Crie sua Página Especial</h1>
+        <form id="specialPageForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="dataEspecial">Data Especial:</label>
+            <input type="date" id="dataEspecial" name="dataEspecial" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <label for="linkMusica">Link da Música:</label>
+            <input type="url" id="linkMusica" name="linkMusica" required>
+
+            <label for="fotos">Fotos:</label>
+            <input type="file" id="fotos" name="fotos" accept="image/*" multiple required>
+
+            <label for="relacao">Relação:</label>
+            <select id="relacao" name="relacao" required>
+                <option value="namorado">Namorado</option>
+                <option value="namorada">Namorada</option>
+                <option value="amigo">Amigo</option>
+                <option value="amiga">Amiga</option>
+                <option value="pai">Pai</option>
+                <option value="mae">Mãe</option>
+                <option value="filho">Filho</option>
+                <option value="filha">Filha</option>
+            </select>
+
+            <label for="dataExpiracao">Data de Expiração:</label>
+            <select id="dataExpiracao" name="dataExpiracao" required>
+                <option value="1ano">1 Ano</option>
+                <option value="vitalicio">Vitalício</option>
+            </select>
+
+            <button type="submit">Gerar Página</button>
+        </form>
+        <div id="status"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
