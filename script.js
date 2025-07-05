@@ -1,5 +1,5 @@
 // Substitua pela URL do seu webhook
-const WEBHOOK_URL = 'COLE_AQUI_A_URL_DO_SEU_WEBHOOK';
+const WEBHOOK_URL = 'https://fjyeqrfen8n.cloudfy.host/webhook-test/retrospectiva';
 
 document.getElementById('specialPageForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -14,35 +14,23 @@ document.getElementById('specialPageForm').addEventListener('submit', async func
     const dataExpiracao = document.getElementById('dataExpiracao').value;
     const fotosInput = document.getElementById('fotos');
 
-    // Lê as fotos como base64
-    const fotos = await Promise.all(
-        Array.from(fotosInput.files).map(file => {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-        })
-    );
-
-    const payload = {
-        nome,
-        dataEspecial,
-        mensagem,
-        linkMusica,
-        fotos, // array de base64
-        dataExpiração: dataExpiracao,
-        relação: relacao
-    };
+    // Monta o FormData
+    const formData = new FormData();
+    formData.append('nome', nome);
+    formData.append('dataEspecial', dataEspecial);
+    formData.append('mensagem', mensagem);
+    formData.append('linkMusica', linkMusica);
+    formData.append('dataExpiração', dataExpiracao);
+    formData.append('relação', relacao);
+    // Adiciona as fotos como arquivos
+    for (let i = 0; i < fotosInput.files.length; i++) {
+        formData.append('fotos', fotosInput.files[i]);
+    }
 
     try {
-        const response = await fetch('https://fjyeqrfen8n.cloudfy.host/webhook-test/retrospectiva', {
+        const response = await fetch(WEBHOOK_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
+            body: formData
         });
         if (response.ok) {
             statusDiv.textContent = 'Página enviada com sucesso!';
