@@ -1,5 +1,5 @@
 // Substitua pela URL do seu webhook
-const WEBHOOK_URL = 'https://fjyeqrfen8n.cloudfy.host/webhook/retrospectiva';
+const WEBHOOK_URL = 'https://fjyeqrfen8n.cloudfy.host/webhook-test/retrospectiva';
 
 document.getElementById('specialPageForm').addEventListener('submit', async function (e) {
     e.preventDefault();
