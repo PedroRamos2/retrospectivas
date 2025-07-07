@@ -13,6 +13,7 @@ document.getElementById('specialPageForm').addEventListener('submit', async func
     const relacao = document.getElementById('relacao').value;
     const dataExpiracao = document.getElementById('dataExpiracao').value;
     const fotosInput = document.getElementById('fotos');
+    const whatsapp = document.getElementById('whatsapp').value;
 
     // Monta o FormData
     const formData = new FormData();
@@ -22,6 +23,7 @@ document.getElementById('specialPageForm').addEventListener('submit', async func
     formData.append('linkMusica', linkMusica);
     formData.append('dataExpiração', dataExpiracao);
     formData.append('relação', relacao);
+    formData.append('whatsapp', whatsapp);
     // Adiciona as fotos como arquivos
     for (let i = 0; i < fotosInput.files.length; i++) {
         formData.append('fotos', fotosInput.files[i]);
