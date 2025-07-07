@@ -1,5 +1,5 @@
 // Substitua pela URL do seu webhook
-const WEBHOOK_URL = 'https://fjyeqrfen8n.cloudfy.host/webhook-test/retrospectiva';
+const WEBHOOK_URL = 'https://fjyeqrfen8n.cloudfy.host/webhook/retrospectiva';
 
 document.getElementById('specialPageForm').addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -7,7 +7,12 @@ document.getElementById('specialPageForm').addEventListener('submit', async func
     statusDiv.textContent = 'Enviando...';
 
     const nome = document.getElementById('nome').value;
-    const dataEspecial = document.getElementById('dataEspecial').value;
+    let dataEspecial = document.getElementById('dataEspecial').value;
+    // Converter yyyy-mm-dd para dd-mm-yyyy
+    if (dataEspecial && dataEspecial.includes('-')) {
+        const [yyyy, mm, dd] = dataEspecial.split('-');
+        dataEspecial = `${dd}-${mm}-${yyyy}`;
+    }
     const mensagem = document.getElementById('mensagem').value;
     const linkMusica = document.getElementById('linkMusica').value;
     const relacao = document.getElementById('relacao').value;
