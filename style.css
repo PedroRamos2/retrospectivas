@@ -42,7 +42,7 @@ h1 {
 form label {
     display: block;
     margin-bottom: 7px;
-    color: #6a82fb;
+    color: #fff;
     font-weight: 600;
     font-size: 1.08rem;
 }
@@ -55,13 +55,13 @@ form input, form textarea, form select {
     border-radius: 8px;
     font-size: 1.08rem;
     background: #5a6edc;
-    color: #ffffff;
+    color: #fff;
     transition: border 0.2s, box-shadow 0.2s;
     box-sizing: border-box;
 }
 
 form input::placeholder, form textarea::placeholder {
-    color: #e0e3ea;
+    color: #f3f3f3;
     opacity: 1;
 }
 
