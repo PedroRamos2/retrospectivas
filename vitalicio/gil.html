@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retrospectiva de Amor 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1f0033, #4b0082);
+      color: white;
+      overflow-x: hidden;
+    }
+    .container {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+    .slide {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #slide-fim{
+        scroll-snap-align: start;
+        min-height: 100vh;
+        padding: 4rem 1.2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+    h1, h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .contador {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    .contador div {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        min-width: 100px;
+        text-align: center;
+    }
+    .contador span {
+        font-size: 2rem;
+        display: block;
+        font-weight: bold;
+    }
+    .contador small {
+        display: block;
+        font-size: 1rem;
+        margin-top: 0.3rem;
+        color: #ccc;
+    }
+    .twoContador {
+        margin-top: 6rem;
+    }
+    .fotos {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        padding: 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .fotos img {
+        flex: 0 0 auto;
+        height: 200px;
+        width: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+        scroll-snap-align: start;
+        transition: transform 0.3s ease;
+    }
+    .fotos img:hover {
+        transform: scale(1.03);
+    }
+    #slide-musica iframe {
+      width: 86vw;
+      height: 200px;
+      border: none;
+      position: relative;
+    }
+    #slide-musica {
+      height: 40px;
+      overflow: hidden;
+    }
+    #rodape {
+        scroll-snap-align: start;
+        min-height: 5vh;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="slide" id="slide-inicio">
+      <h1>🌟 Nossa História 🌟</h1>
+      <p>Com <strong>Gil</strong>, cada dia é um capítulo inesquecível.</p>
+      <div class="contador" id="linha1">
+            <div><span id="anos">0</span><small>anos</small></div>
+            <div><span id="meses">0</span><small>meses</small></div>
+      </div>
+      <div class="contador" id="linha2">
+            <div><span id="dias">0</span><small>dias</small></div>
+            <div><span id="horas">0</span><small>horas</small></div>
+      </div>
+      <div class="contador" id="linha3">
+            <div><span id="minutos">0</span><small>minutos</small></div>
+            <div><span id="segundos">0</span><small>segundos</small></div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-musica">
+      <h2>🎵 Nossa Trilha Sonora</h2>
+      <div id="player"></div>
+    </section>
+
+    <section class="slide" id="slide-estacao">
+      <h2>🌸 Estação do Amor</h2>
+      <p>Nossa história começou na Primavera 🌸</p>
+    </section>
+
+    <section class="slide" id="slide-fotos">
+      <h2>📷 Nossos Momentos</h2>
+      <div class="fotos">
+    <img src="https://xopwqunmuuazzelvuvwt.supabase.co/storage/v1/object/public/fotos/uploads/1752779648490-9225.jpg" alt="Foto 1" />
+
+    <img src="https://xopwqunmuuazzelvuvwt.supabase.co/storage/v1/object/public/fotos/uploads/1752779648490-8428.jpg" alt="Foto 2" />
+
+    <img src="https://xopwqunmuuazzelvuvwt.supabase.co/storage/v1/object/public/fotos/uploads/1752779648490-9394.jpg" alt="Foto 3" />
+</div>
+      <p>Eu te amo</p>
+    </section>
+
+    <section class="slide" id="slide-signo">
+      <h2>Sob o signo de Sagitário</h2>
+      <p><img src="https://xopwqunmuuazzelvuvwt.supabase.co/storage/v1/object/public/signos/meuSigno/sargitario.png" alt="Sagitário" style="height: 120px; margin: 1rem auto;" /></p>
+    </section>
+
+    <section class="slide" id="slide-fim">
+      <h2>❤️ Te amo!</h2>
+      <p>Obrigado por fazer parte dessa história. Gil 💖</p>
+      <div class="twoContador">
+            <span id="anos2">0</span><small> anos,</small>
+            <span id="meses2">0</span><small> meses,</small>
+            <span id="dias2">0</span><small> dias,</small>
+            <span id="horas2">0</span><small> horas,</small>
+            <span id="minutos2">0</span><small> minutos,</small>
+            <span id="segundos2">0</span><small> segundos</small>
+            <span>que estamos juntos. ❤️</span>
+      </div>
+    </section>
+    <section class="slide" id="rodape">  
+        <footer>&copy; Ramos</footer>
+    </section>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    // Função para atualizar contador
+    const inicio = new Date("1965-12-03");
+
+    function atualizarContador() {
+        const agora = new Date();
+
+        let anos = agora.getFullYear() - inicio.getFullYear();
+        let meses = agora.getMonth() - inicio.getMonth();
+        let dias = agora.getDate() - inicio.getDate();
+
+        if (dias < 0) {
+            meses -= 1;
+            const mesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0);
+            dias += mesAnterior.getDate();
+        }
+
+        if (meses < 0) {
+            anos -= 1;
+            meses += 12;
+        }
+
+        let diff = Math.floor((agora - inicio) / 1000);
+        const horas = Math.floor((diff % 86400) / 3600);
+        const minutos = Math.floor((diff % 3600) / 60);
+        const segundos = diff % 60;
+
+        document.getElementById("anos").textContent = anos;
+        document.getElementById("meses").textContent = meses;
+        document.getElementById("dias").textContent = dias;
+        document.getElementById("horas").textContent = horas;
+        document.getElementById("minutos").textContent = minutos;
+        document.getElementById("segundos").textContent = segundos;
+
+        document.getElementById("anos2").textContent = anos;
+        document.getElementById("meses2").textContent = meses;
+        document.getElementById("dias2").textContent = dias;
+        document.getElementById("horas2").textContent = horas;
+        document.getElementById("minutos2").textContent = minutos;
+        document.getElementById("segundos2").textContent = segundos;
+
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    // Player YouTube
+    let player;
+    let videoStarted = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: "-3UXlXPWS68",
+        playerVars: {
+          autoplay: 0,
+          controls: 1,
+          mute: 1,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1
+        },
+        events: {
+          onReady: onPlayerReady,
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.playVideo();
+      event.target.mute();
+
+      function startVideoWithSound() {
+        if (!videoStarted) {
+          player.unMute();
+          videoStarted = true;
+          window.removeEventListener("click", startVideoWithSound);
+          window.removeEventListener("touchstart", startVideoWithSound);
+        }
+      }
+
+      window.addEventListener("click", startVideoWithSound, { once: true });
+      window.addEventListener("touchstart", startVideoWithSound, { once: true });
+    }
+  </script>
+</body>
+</html>
