@@ -16,18 +16,18 @@ html, body {
 .container {
     max-width: 420px;
     margin: 48px auto;
-    background: #ffffff;
+    background: #6a82fb;
     border-radius: 18px;
     box-shadow: 0 8px 32px rgba(80, 80, 160, 0.15);
     padding: 40px 28px 32px 28px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    color: #ffffff;
+    color: #fff;
 }
 
 .container h1 {
-    color: #6a82fb;
+    color: #fff;
 }
 
 h1 {
